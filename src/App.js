@@ -36,7 +36,7 @@ export default function App() {
                                 </div>
                                 <div className="demi-content">
                                     <img className="demi-img" src={`${process.env.PUBLIC_URL}/images/demis/${demi.name}.png`} 
-                                    style={ demis[index].status.yes ? { opacity: 1 } : {} }
+                                    style={ demis[index].status.yes ? { opacity: 1 } : demis[index].status.no ? { opacity: .1 } : {} }
                                     />
                                     <div className="demi-status">
                                         <div className="status status-yes"
