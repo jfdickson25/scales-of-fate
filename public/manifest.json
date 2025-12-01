@@ -1,0 +1,47 @@
+{
+  "short_name": "Scales of fate card tracker",
+  "name": "Scales of fate card tracker",
+  "description": "App for tracking flipped cards in Scales of Fate board game",
+  "start_url": "/scales-of-fate",
+  "display": "standalone",
+  "theme_color": "#252525",
+  "background_color": "#252525",
+  "icons": [
+    {
+      "src": "/scales-of-fate/images/icons/SOF-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/scales-of-fate/images/icons/SOF-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/scales-of-fate/images/icons/SOF-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/scales-of-fate/images/icons/SOF-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/scales-of-fate/images/icons/SOF-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/scales-of-fate/images/icons/SOF-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/scales-of-fate/images/icons/SOF-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait"
+}
