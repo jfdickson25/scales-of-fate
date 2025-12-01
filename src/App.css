@@ -9,18 +9,18 @@ body {
     margin-right: auto;
 }
 #title-area {
-    height: 20vh;
+    height: 15vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #title-image {
-    width: 70%;
+    width: 60%;
 }
 
 #demis-area {
-    height: 65vh;
+    height: 70vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
@@ -94,9 +94,9 @@ body {
     height: 18%;
     width: 100%;
     background-color: #F4F4F4;
-    font-size: 6pt;
+    font-size: 8pt;
     color: #00000046;
-    padding: 3px;
+    padding: 5px;
     box-sizing: border-box;
     border: none;
     font-family: 'Gideon Roman', serif;
@@ -121,7 +121,7 @@ body {
     font-family: 'Gideon Roman', serif;
     font-size: 12pt;
     text-align: center;
-    height: 40%;
+    height: 30%;
     background-color: #EFB869;
     font-weight: bold;
     color: #252525;
@@ -146,7 +146,7 @@ body {
     font-size: 16pt;
     text-align: center;
     color: #ffffff;
-    height: 60%;
+    height: 70%;
 }
 
 .score-item {

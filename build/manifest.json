@@ -1,7 +1,7 @@
 {
-  "short_name": "Scales of Fate",
-  "name": "Scales of Fate",
-  "description": "App for tracking demis and scores in Scales of Fate",
+  "short_name": "Scales of fate card tracker",
+  "name": "Scales of fate card tracker",
+  "description": "App for tracking flipped cards in Scales of Fate board game",
   "start_url": "/scales-of-fate",
   "display": "standalone",
   "theme_color": "#252525",
