@@ -160,10 +160,10 @@ body {
     color: white;
     text-align: center;
     border: none;
-    border-left: solid 1px #5c5c5c;
-    border-right: solid 1px #25252544;
+    border-left: solid 1px #74747444;
     font-family: 'Gideon Roman', serif;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .score-item:focus {
@@ -174,6 +174,8 @@ body {
 #total {
     color: #EFB869;
     font-weight: bold;
+    box-sizing: border-box;
+    border-right: solid 1px #74747444;
 }
 
 @media (min-width: 700px) {
