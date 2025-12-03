@@ -10,24 +10,29 @@ body {
     height: 100dvh; /* Dynamic viewport height - better for mobile */
     max-height: 100dvh;
 }
+
+
 #title-area {
     height: 13dvh;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: min-content;
 }
 
 #title-image {
-    width: 40%;
+    width: 45%;
 }
 
 #demis-area {
     height: 75dvh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    min-height: min-content;
 }
 
 .demi {
+    height: 100%;
     border: solid 1px #b8b8b849;
     background-color: #fffffd;
     box-sizing: border-box;
@@ -36,6 +41,7 @@ body {
 }
 
 .demi-header {
+    height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -59,6 +65,7 @@ body {
 }
 
 .demi-content {
+    height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: 70% 30%;
@@ -115,9 +122,11 @@ body {
     height: 12dvh;
     display: grid;
     grid-template-rows: 30% 70%;
+    min-height: 100px;
 }
 
 #score-header {
+    height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
