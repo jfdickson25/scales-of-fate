@@ -9,6 +9,8 @@ body {
     height: 100dvh;
     height: 100dvh; /* Dynamic viewport height - better for mobile */
     max-height: 100dvh;
+    box-sizing: border-box;
+    overflow-y: scroll;
 }
 
 
