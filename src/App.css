@@ -6,12 +6,12 @@ body {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    height: 100vh;
+    height: 100dvh;
     height: 100dvh; /* Dynamic viewport height - better for mobile */
     max-height: 100dvh;
 }
 #title-area {
-    height: 10vh;
+    height: 10dvh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +22,7 @@ body {
 }
 
 #demis-area {
-    height: 75vh;
+    height: 75dvh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
@@ -113,7 +113,9 @@ body {
 }
 
 #score-area {
-    height: 15vh;
+    height: 15dvh;
+    display: grid;
+    grid-template-rows: 30% 70%;
 }
 
 #score-header {
@@ -123,9 +125,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Gideon Roman', serif;
-    font-size: 12pt;
     text-align: center;
-    height: 30%;
     background-color: #EFB869;
     font-weight: bold;
     color: #252525;
@@ -147,10 +147,8 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Oxanium', sans-serif;
-    font-size: 16pt;
     text-align: center;
     color: #ffffff;
-    height: 70%;
 }
 
 .score-item {
