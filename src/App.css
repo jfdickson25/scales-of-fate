@@ -33,6 +33,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     min-height: min-content;
+    overflow-y: scroll;
 }
 
 .demi {
