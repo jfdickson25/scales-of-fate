@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/scales-of-fate/static/css/main.d956a72e.css",
+    "main.css": "/scales-of-fate/static/css/main.d70f327c.css",
     "main.js": "/scales-of-fate/static/js/main.e901d06d.js",
     "index.html": "/scales-of-fate/index.html",
-    "main.d956a72e.css.map": "/scales-of-fate/static/css/main.d956a72e.css.map",
+    "main.d70f327c.css.map": "/scales-of-fate/static/css/main.d70f327c.css.map",
     "main.e901d06d.js.map": "/scales-of-fate/static/js/main.e901d06d.js.map"
   },
   "entrypoints": [
-    "static/css/main.d956a72e.css",
+    "static/css/main.d70f327c.css",
     "static/js/main.e901d06d.js"
   ]
 }
