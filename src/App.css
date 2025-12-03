@@ -11,7 +11,7 @@ body {
     max-height: 100dvh;
 }
 #title-area {
-    height: 10dvh;
+    height: 13dvh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,10 +31,11 @@ body {
     border: solid 1px #b8b8b849;
     background-color: #fffffd;
     box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 18% 64% 18%;
 }
 
 .demi-header {
-    height: 18%;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -58,7 +59,6 @@ body {
 }
 
 .demi-content {
-    height: 64%;
     width: 100%;
     display: grid;
     grid-template-columns: 70% 30%;
@@ -93,7 +93,6 @@ body {
 }
 
 .demi-notes {
-    height: 18%;
     width: 100%;
     background-color: #F4F4F4;
     font-size: 8pt;
@@ -113,7 +112,7 @@ body {
 }
 
 #score-area {
-    height: 15dvh;
+    height: 12dvh;
     display: grid;
     grid-template-rows: 30% 70%;
 }
