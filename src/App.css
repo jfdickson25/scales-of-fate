@@ -8,20 +8,21 @@ body {
     margin-right: auto;
     height: 100vh;
     height: 100dvh; /* Dynamic viewport height - better for mobile */
+    max-height: 100dvh;
 }
 #title-area {
-    height: 15vh;
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #title-image {
-    width: 60%;
+    width: 40%;
 }
 
 #demis-area {
-    height: 70vh;
+    height: 75vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
@@ -163,7 +164,6 @@ body {
     color: white;
     text-align: center;
     border: none;
-    border-left: solid 1px #74747444;
     font-family: 'Gideon Roman', serif;
     padding: 0;
     box-sizing: border-box;
@@ -178,7 +178,6 @@ body {
     color: #EFB869;
     font-weight: bold;
     box-sizing: border-box;
-    border-right: solid 1px #74747444;
 }
 
 @media (min-width: 700px) {
