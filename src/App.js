@@ -121,7 +121,7 @@ export default function App() {
                     />
                     <input type="number" className="score-item" value={scores.powers} placeholder="0"
                         onChange={(event) => {
-                            if(event.target.powers === "" || event.target.value <= 0) {
+                            if(event.target.powers === "") {
                                 setScores({
                                     ...scores,
                                     powers: null
