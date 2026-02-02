@@ -129,14 +129,14 @@ export default function App() {
                                 return;
                             }
 
-                            const value = parseInt(event.target.value) || 0;
+                            const value = parseInt(event.target.value);
                             setScores({
                                 ...scores,
                                 powers: value > 0 ? -value : value
                             });
                         }} 
                     />
-                    <div id="total" className="score-item">{scores.position + scores.guess + scores.powers}</div>
+                    <div id="total" className="score-item">{ (scores.position || 0) + (scores.guess || 0) + (scores.powers || 0)}</div>
                 </div>
             </div>
         </React.Fragment>
