@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/scales-of-fate/static/css/main.d09d6d4c.css",
+    "main.css": "/scales-of-fate/static/css/main.568920e2.css",
     "main.js": "/scales-of-fate/static/js/main.a5ef1d7c.js",
+    "static/media/Card Texture.png": "/scales-of-fate/static/media/Card Texture.e69d0d795b3a87d46578.png",
     "index.html": "/scales-of-fate/index.html",
-    "main.d09d6d4c.css.map": "/scales-of-fate/static/css/main.d09d6d4c.css.map",
+    "main.568920e2.css.map": "/scales-of-fate/static/css/main.568920e2.css.map",
     "main.a5ef1d7c.js.map": "/scales-of-fate/static/js/main.a5ef1d7c.js.map"
   },
   "entrypoints": [
-    "static/css/main.d09d6d4c.css",
+    "static/css/main.568920e2.css",
     "static/js/main.a5ef1d7c.js"
   ]
 }
