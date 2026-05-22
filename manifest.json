@@ -4,8 +4,8 @@
   "description": "App for tracking demis and scores in Scales of Fate",
   "start_url": "/scales-of-fate",
   "display": "standalone",
-  "theme_color": "#252525",
-  "background_color": "#252525",
+  "theme_color": "#484848",
+  "background_color": "#484848",
   "icons": [
     {
       "src": "/scales-of-fate/images/icons/SOF-48.png",
