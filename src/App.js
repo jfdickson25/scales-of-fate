@@ -3,19 +3,22 @@ import './App.css';
 import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRotateLeft } from "@fortawesome/free-solid-svg-icons";
+
+const createInitialDemis = () => [
+    { name: "Pentha", status: { yes: false, no: false, maybe: false}, notes: "" },
+    { name: "Agamar", status: { yes: false, no: false, maybe: false}, notes: "" },
+    { name: "Klar", status: { yes: false, no: false, maybe: false}, notes: "" },
+    { name: "Aponi", status: { yes: false, no: false, maybe: false}, notes: "" },
+    { name: "Saghari", status: { yes: false, no: false, maybe: false}, notes: "" },
+    { name: "Namari", status: { yes: false, no: false, maybe: false}, notes: "" },
+    { name: "Naka", status: { yes: false, no: false, maybe: false}, notes: "" },
+    { name: "Belan", status: { yes: false, no: false, maybe: false}, notes: "" },
+    { name: "Isabel", status: { yes: false, no: false, maybe: false}, notes: "" }
+];
+
 export default function App() {
 
-    const [demis, setDemis] = React.useState([
-        { name: "Pentha", status: { yes: false, no: false, maybe: false}, notes: "" },
-        { name: "Agamar", status: { yes: false, no: false, maybe: false}, notes: "" },
-        { name: "Klar", status: { yes: false, no: false, maybe: false}, notes: "" },
-        { name: "Aponi", status: { yes: false, no: false, maybe: false}, notes: "" },
-        { name: "Saghari", status: { yes: false, no: false, maybe: false}, notes: "" },
-        { name: "Namari", status: { yes: false, no: false, maybe: false}, notes: "" },
-        { name: "Naka", status: { yes: false, no: false, maybe: false}, notes: "" },
-        { name: "Belan", status: { yes: false, no: false, maybe: false}, notes: "" },
-        { name: "Isabel", status: { yes: false, no: false, maybe: false}, notes: "" }
-    ]);
+    const [demis, setDemis] = React.useState(() => createInitialDemis());
 
     const [scores, setScores] = React.useState({
         position: null,
@@ -35,54 +38,32 @@ export default function App() {
         }
     }, []);
 
+    const resetApp = () => {
+        const resetIcon = document.getElementById("refresh-icon");
+        resetIcon.classList.add("refreshing");
+
+        setTimeout(() => {
+            resetIcon.classList.remove("refreshing");
+            const resetDemis = createInitialDemis();
+            const resetScores = {
+                position: null,
+                guess: null,
+                powers: null
+            };
+
+            setDemis(resetDemis);
+            setScores(resetScores);
+            localStorage.setItem("demis", JSON.stringify(resetDemis));
+            localStorage.setItem("scores", JSON.stringify(resetScores));
+        }, 500);
+    };
+
     return (
         <React.Fragment>
             <div id="title-area">
                 <img src={`${process.env.PUBLIC_URL}/images/title-and-logo.png`} alt="Scales of Fate" id="title-image"/>
             </div>
-            <FontAwesomeIcon icon={faArrowRotateLeft} id="refresh-icon" onClick={() => {
-                const icon = document.getElementById("refresh-icon");
-                icon.classList.add("refreshing");
-                
-                setTimeout(() => {
-                    icon.classList.remove("refreshing");
-
-                    setDemis([
-                        { name: "Pentha", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Agamar", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Klar", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Aponi", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Saghari", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Namari", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Naka", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Belan", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Isabel", status: { yes: false, no: false, maybe: false}, notes: "" }
-                    ]);
-                    setScores({
-                        position: null,
-                        guess: null,
-                        powers: null
-                    }); 
-
-                    localStorage.setItem("demis", JSON.stringify([
-                        { name: "Pentha", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Agamar", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Klar", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Aponi", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Saghari", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Namari", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Naka", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Belan", status: { yes: false, no: false, maybe: false}, notes: "" },
-                        { name: "Isabel", status: { yes: false, no: false, maybe: false}, notes: "" }
-                    ]));
-                    localStorage.setItem("scores", JSON.stringify({
-                        position: null,
-                        guess: null,
-                        powers: null
-                    }));
-                }, 500);
-
-            }} />
+            <FontAwesomeIcon icon={faArrowRotateLeft} id="refresh-icon" size="lg" onClick={resetApp} />
             <div id="demis-area">
                 {
                         demis.map((demi, index) => (
@@ -149,56 +130,34 @@ export default function App() {
                     <div className="score-criteria">TOTAL</div>
                 </div>
                 <div id="score-content">
-                    <input type="number" className="score-item" value={scores.position} placeholder="0" 
+                    <input type="number" className="score-item" value={scores.position ?? ""} placeholder="0" 
                         onChange={(event) => {
-                            if(event.target.value === "") {
-                                setScores({
-                                    ...scores,
-                                    position: null
-                                });
-                                return;
-                            }
+                            const nextScores = event.target.value === ""
+                                ? { ...scores, position: null }
+                                : { ...scores, position: parseInt(event.target.value) || 0 };
 
-                            setScores({
-                                ...scores,
-                                position: parseInt(event.target.value) || 0
-                            });
-                            localStorage.setItem("scores", JSON.stringify(scores));
+                            setScores(nextScores);
+                            localStorage.setItem("scores", JSON.stringify(nextScores));
                         }} 
                     />
-                    <input type="number" className="score-item" value={scores.guess} placeholder="0" 
+                    <input type="number" className="score-item" value={scores.guess ?? ""} placeholder="0" 
                         onChange={(event) => {
-                            if(event.target.value === "") {
-                                setScores({
-                                    ...scores,
-                                    guess: null
-                                });
-                                return;
-                            }
+                            const nextScores = event.target.value === ""
+                                ? { ...scores, guess: null }
+                                : { ...scores, guess: parseInt(event.target.value) || 0 };
 
-                            setScores({
-                                ...scores,
-                                guess: parseInt(event.target.value) || 0
-                            });
-                            localStorage.setItem("scores", JSON.stringify(scores));
+                            setScores(nextScores);
+                            localStorage.setItem("scores", JSON.stringify(nextScores));
                         }} 
                     />
-                    <input type="number" className="score-item" value={scores.powers} placeholder="0"
+                    <input type="number" className="score-item" value={scores.powers ?? ""} placeholder="0"
                         onChange={(event) => {
-                            if(event.target.powers === "") {
-                                setScores({
-                                    ...scores,
-                                    powers: null
-                                });
-                                return;
-                            }
+                            const nextScores = event.target.value === ""
+                                ? { ...scores, powers: null }
+                                : { ...scores, powers: (parseInt(event.target.value) || 0) > 0 ? -(parseInt(event.target.value) || 0) : (parseInt(event.target.value) || 0) };
 
-                            const value = parseInt(event.target.value);
-                            setScores({
-                                ...scores,
-                                powers: value > 0 ? -value : value
-                            });
-                            localStorage.setItem("scores", JSON.stringify(scores));
+                            setScores(nextScores);
+                            localStorage.setItem("scores", JSON.stringify(nextScores));
                         }} 
                     />
                     <div id="total" className="score-item">{ (scores.position || 0) + (scores.guess || 0) + (scores.powers || 0)}</div>
