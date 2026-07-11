@@ -44,6 +44,28 @@ body::after {
     padding-bottom: 5px;
 }
 
+svg#refresh-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgba(255, 255, 255, 0.384);
+    width: 30px;
+    height: 30px;
+}
+
+.refreshing {
+    animation: spin .5s linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
 #demis-area {
     height: 75dvh;
     display: grid;
